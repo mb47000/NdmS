@@ -38,6 +38,11 @@ class Task
      */
     private $unit;
 
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $unitPrice;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,5 +94,22 @@ class Task
         $this->unit = $unit;
 
         return $this;
+    }
+
+    public function getUnitPrice(): ?float
+    {
+        return $this->unitPrice;
+    }
+
+    public function setUnitPrice(float $unitPrice): self
+    {
+        $this->unitPrice = $unitPrice;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->titled;
     }
 }

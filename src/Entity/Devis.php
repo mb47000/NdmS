@@ -35,12 +35,12 @@ class Devis
     private $date;
 
     /**
-     * @ORM\Column(type="float")
+     * @ORM\Column(type="float", nullable=true)
      */
     private $total;
 
     /**
-     * @ORM\ManyToOne(targetEntity=customer::class, inversedBy="devis")
+     * @ORM\ManyToOne(targetEntity=Customer::class, inversedBy="devis")
      * @ORM\JoinColumn(nullable=false)
      */
     private $customer;
@@ -149,5 +149,10 @@ class Devis
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->titled.'(n°'.$this->id.') '.$this->customer;
     }
 }

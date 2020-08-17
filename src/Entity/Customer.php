@@ -200,4 +200,9 @@ class Customer
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->name.' '.$this->firstName.'('.$this->id.') ';
+    }
 }
