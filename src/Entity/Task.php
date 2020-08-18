@@ -2,11 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\TaskRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\TaskRepository;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass=taskRepository::class)
+ * @ApiResource()
  */
 class Task
 {

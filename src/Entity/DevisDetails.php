@@ -2,11 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\DevisDetailsRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\DevisDetailsRepository;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass=DevisDetailsRepository::class)
+ * @ApiResource()
  */
 class DevisDetails
 {
