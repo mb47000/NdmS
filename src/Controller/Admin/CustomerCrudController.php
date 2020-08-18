@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Customer;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IntegerField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
@@ -23,7 +24,8 @@ class CustomerCrudController extends AbstractCrudController
             TextField::new('mobile'),
             TextField::new('address'),
             TextField::new('city'),
-            IntegerField::new('zipCode')
+            IntegerField::new('zipCode'),
+            DateField::new('createDate')->hideOnForm()
         ];
     }
 }
